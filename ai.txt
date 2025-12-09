@@ -1,0 +1,6 @@
+I used ChatGPT for the following:
+- Debugging backend API endpoints
+- Helping me to integrate Google Calendar API
+- Improving UI of the frontend
+- Understanding MUI components and how to use them
+- Helping me make the website responsive
