@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 'use strict';
 
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 8080;
 
 const express = require("express");
 const cors = require("cors");
@@ -35,7 +35,6 @@ app.use((req, res, next) => {
 
 app.use(cors({
     origin: function (origin, callback) {
-        // allow requests with no origin (e.g., mobile apps, Postman)
         if (!origin) return callback(null, true);
 
         if (allowedOrigins.includes(origin)) {
@@ -45,7 +44,7 @@ app.use(cors({
         }
     },
     credentials: true,
-    methods: ["GET", "POST", "DELETE", "PATCH", "PUT", "OPTIONS"],
+    methods: ["GET", "POST", "DELETE", "PATCH", "PUT"],
     allowedHeaders: ["Content-Type", "Authorization"],
 }));
 
