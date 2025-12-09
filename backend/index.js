@@ -22,12 +22,36 @@ const promotionRoutes = require("./promotion");
 const { router: googleRouter } = require("./google");
 const FRONTEND_URL = process.env.FRONTEND_URL || "http://localhost:5173"
 
+const allowedOrigins = [
+    "http://localhost:5173",
+    "http://localhost:3000",
+    "https://csc309project-production-c129.up.railway.app"
+];
+
+app.use((req, res, next) => {
+    console.log("Origin:", req.headers.origin);
+    next();
+});
+
 app.use(cors({
-    origin: FRONTEND_URL,
-    methods: ['GET', 'POST', 'DELETE', 'PATCH'],
-    allowedHeaders: ['Content-Type', 'Authorization'],
-    credentials: true
+    origin: function (origin, callback) {
+        // allow requests with no origin (e.g., mobile apps, Postman)
+        if (!origin) return callback(null, true);
+
+        if (allowedOrigins.includes(origin)) {
+            return callback(null, true);
+        } else {
+            return callback(new Error("CORS blocked: " + origin));
+        }
+    },
+    credentials: true,
+    methods: ["GET", "POST", "DELETE", "PATCH", "PUT", "OPTIONS"],
+    allowedHeaders: ["Content-Type", "Authorization"],
 }));
+
+// MUST add this for preflight to work
+app.options("*", cors());
+
 app.use(express.json());
 app.use("/users", userRoutes);
 app.use("/events", eventRoutes);
