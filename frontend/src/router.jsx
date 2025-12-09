@@ -4,7 +4,7 @@ import { createBrowserRouter, Navigate } from 'react-router-dom';
 import RegularLayout from "./layouts/RegularLayout.jsx";
 
 import Events from "./Pages/Events.jsx";
-import EventDetail from "./pages/EventDetail.jsx";
+import EventDetail from "./Pages/EventDetail.jsx";
 import Login from "./Pages/Login.jsx";
 import Promotions from "./Pages/Promotions.jsx";
 import Redeem from "./Pages/Redeem.jsx";
