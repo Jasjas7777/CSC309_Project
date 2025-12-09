@@ -4,7 +4,7 @@ import { enqueueSnackbar } from "notistack";
 
 // Set config defaults when creating the instance
 const api = axios.create({
-    baseURL: "http://localhost:3000",
+    baseURL: import.meta.env.VITE_BACKEND_URL,
     withCredentials: true,
 });
 

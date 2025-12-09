@@ -35,10 +35,10 @@ const eventRoutes = require("./events");
 const transactionRoutes = require("./transaction");
 const promotionRoutes = require("./promotion");
 const { router: googleRouter } = require("./google");
-
+const FRONTEND_URL = process.env.FRONTEND_URL
 
 app.use(cors({
-    origin: 'http://localhost:5173',
+    origin: FRONTEND_URL,
     methods: ['GET', 'POST', 'DELETE', 'PATCH'],
     allowedHeaders: ['Content-Type', 'Authorization'],
     credentials: true
