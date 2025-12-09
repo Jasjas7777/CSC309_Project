@@ -24,7 +24,7 @@ import ManagePromo from "./Pages/Manager/ManagePromo.jsx"
 import ManageTrans from "./Pages/Manager/ManageTrans.jsx"
 import ManageUsers from "./Pages/Manager/ManageUsers.jsx"
 
-import RedirectPage from "./pages/RedirectPage.jsx";
+import RedirectPage from "./Pages/RedirectPage.jsx";
 import MyCalendar from "@/Pages/MyCalendar.jsx";
 
 
