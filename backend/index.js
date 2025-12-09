@@ -3,23 +3,6 @@
 
 const port = process.env.PORT || 8080;
 
-const express = require("express");
-const cors = require("cors");
-const app = express();
-
-const { PrismaClient } = require('@prisma/client');
-const { v4: uuidv4 } = require('uuid');
-const prisma = new PrismaClient();
-const jwt = require('jsonwebtoken');
-require('dotenv').config();
-const SECRET_KEY = process.env.JWT_SECRET;
-
-
-const userRoutes = require("./users");
-const eventRoutes = require("./events");
-const transactionRoutes = require("./transaction");
-const promotionRoutes = require("./promotion");
-const { router: googleRouter } = require("./google");
 const FRONTEND_URL = process.env.FRONTEND_URL || "http://localhost:5173"
 
 const allowedOrigins = [
@@ -48,8 +31,25 @@ app.use(cors({
     allowedHeaders: ["Content-Type", "Authorization"],
 }));
 
-// MUST add this for preflight to work
 app.options("*", cors());
+
+const express = require("express");
+const cors = require("cors");
+const app = express();
+
+const { PrismaClient } = require('@prisma/client');
+const { v4: uuidv4 } = require('uuid');
+const prisma = new PrismaClient();
+const jwt = require('jsonwebtoken');
+require('dotenv').config();
+const SECRET_KEY = process.env.JWT_SECRET;
+
+
+const userRoutes = require("./users");
+const eventRoutes = require("./events");
+const transactionRoutes = require("./transaction");
+const promotionRoutes = require("./promotion");
+const { router: googleRouter } = require("./google");
 
 app.use(express.json());
 app.use("/users", userRoutes);
