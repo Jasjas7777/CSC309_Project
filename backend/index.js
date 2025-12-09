@@ -12,7 +12,8 @@ const FRONTEND_URL = process.env.FRONTEND_URL || "http://localhost:5173"
 const allowedOrigins = [
     "http://localhost:5173",
     "http://localhost:3000",
-    "https://csc309project-production-c129.up.railway.app"
+    "https://csc309project-production-c129.up.railway.app",  // frontend
+    "https://csc309project-production-17ba.up.railway.app"   // backend
 ];
 
 app.use((req, res, next) => {
