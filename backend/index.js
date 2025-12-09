@@ -20,7 +20,7 @@ const eventRoutes = require("./events");
 const transactionRoutes = require("./transaction");
 const promotionRoutes = require("./promotion");
 const { router: googleRouter } = require("./google");
-const FRONTEND_URL = process.env.FRONTEND_URL
+const FRONTEND_URL = process.env.FRONTEND_URL || "http://localhost:5173"
 
 app.use(cors({
     origin: FRONTEND_URL,
