@@ -2,6 +2,10 @@
 'use strict';
 
 const port = process.env.PORT || 8080;
+const express = require("express");
+const cors = require("cors");
+const app = express();
+app.use(express.json());
 
 const FRONTEND_URL = process.env.FRONTEND_URL || "http://localhost:5173"
 
@@ -33,10 +37,6 @@ app.use(cors({
 
 app.options("*", cors());
 
-const express = require("express");
-const cors = require("cors");
-const app = express();
-
 const { PrismaClient } = require('@prisma/client');
 const { v4: uuidv4 } = require('uuid');
 const prisma = new PrismaClient();
@@ -51,7 +51,6 @@ const transactionRoutes = require("./transaction");
 const promotionRoutes = require("./promotion");
 const { router: googleRouter } = require("./google");
 
-app.use(express.json());
 app.use("/users", userRoutes);
 app.use("/events", eventRoutes);
 app.use("/transactions", transactionRoutes);
