@@ -28,7 +28,7 @@
 - **Cashier**: utorid: cathy12
 - **Regular User**: utorid: reeree12
 - **Regular User**: utorid: rachel12, password
-- The pwd for all demo users are Pass-word-123-# (remove the dash)
+- The pwd for all demo users are Password123# 
 
 ### Prerequisites
 - Node.js 18+
