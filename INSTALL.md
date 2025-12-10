@@ -27,7 +27,7 @@
 - **Manager**: utorid: bobbob12
 - **Cashier**: utorid: cathy12
 - **Regular User**: utorid: reeree12
-- **Regular User**: utorid: rachel12, password
+- **Regular User**: utorid: rachel12
 - The pwd for all demo users are Password123# 
 
 ### Prerequisites
@@ -112,4 +112,5 @@ Frontend runs on `http://localhost:5173``
     - Start Command: `npx serve -s dist`
 3. **Set environment variable**:
     - `VITE_BACKEND_URL`: The deployed backend URL
+
 4. **Deploy**: Automatic deployment on push to main branch
